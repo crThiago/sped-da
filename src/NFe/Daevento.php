@@ -314,7 +314,8 @@ class Daevento extends DaCommon
         if ($foneLen > 0) {
             $fone2 = substr($fone, 0, $foneLen - 4);
             $fone1 = substr($fone, 0, $foneLen - 8);
-            $fone = '(' . $fone1 . ') ' . substr($fone2, - 4) . '-' . substr($fone, - 4);
+            $start = (strlen($fone2) > 6) ? - 5 : - 4;
+            $fone = '(' . substr($fone1, 0, 1) . ') ' . substr($fone2, $start) . '-' . substr($fone, - 4);
         } else {
             $fone = '';
         }
